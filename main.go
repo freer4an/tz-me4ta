@@ -45,7 +45,7 @@ func main() {
 		}()
 	}
 	wg.Wait()
-	fmt.Println(int(sum.Load()))
+	fmt.Println("Sum:", int(sum.Load()))
 }
 
 func init() {
