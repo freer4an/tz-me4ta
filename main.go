@@ -51,6 +51,9 @@ func main() {
 func init() {
 	flag.IntVar(&maxWorkers, "n", DEFAULT_MAX_WORKERS, "go run . -n 10")
 	flag.Parse()
+	if maxWorkers < 1 {
+		panic("invalid flag value: 0<n")
+	}
 }
 
 func parseJsonObjects(path string) ([]Object, error) {
